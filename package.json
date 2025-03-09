@@ -1,0 +1,27 @@
+{
+  "name": "carboncopies",
+  "version": "1.0.0",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/server.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "ffmpeg-static": "^5.2.0",
+    "openai": "^4.86.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.51.0",
+    "playwright": "^1.51.0"
+  },
+  "keywords": [],
+  "description": "",
+  "author": "Henry",
+  "license": "MIT"
+}

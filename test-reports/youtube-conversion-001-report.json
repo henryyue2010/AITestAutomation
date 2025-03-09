@@ -1,0 +1,28 @@
+{
+  "testId": "youtube-conversion-001",
+  "startTime": "2025-03-09T14:01:56.405Z",
+  "endTime": "2025-03-09T14:03:30.991Z",
+  "steps": [
+    {
+      "step": "Input URL",
+      "status": "SUCCESS",
+      "screenshot": "./test-screen-shots/2.png"
+    },
+    {
+      "step": "Open link",
+      "status": "SUCCESS",
+      "screenshot": "./test-screen-shots/1.png"
+    },
+    {
+      "step": "Verify Selection of URL",
+      "status": "FAILED",
+      "error": "page.waitForSelector: Timeout 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-tmp_filename]') to be visible\u001b[22m\n",
+      "screenshot": "./test-screen-shots/3.png"
+    }
+  ],
+  "aiAnalysis": {
+    "explanation": "The failure occurred because the system attempted to access a YouTube video URL, which is explicitly blocked by the service due to copyright restrictions. The error message indicates direct access to streaming service content is prohibited. The empty console logs and successful network timing data for the main page load suggest the failure happened during URL validation before any client-side logging or network requests related to the conversion process.",
+    "recommendation": "1. Avoid testing with streaming service URLs\n2. Use local test files or authorized content\n3. Add explicit error handling for blocked domains:\n\n```typescript\n// Playwright example check\nawait test.step('Verify URL validation', async () => {\n  const errorMessage = page.getByText('copyright restrictions');\n  await expect(errorMessage).toBeVisible({ timeout: 5000 });\n});\n```\n4. Ensure test steps are properly serialized with meaningful descriptions",
+    "confidence": "0.9"
+  }
+}
