@@ -4,7 +4,7 @@ Use DeepSeek API and Playwright to automate the web testing and generate AI anal
 
 Install & Run:
 
-Add DEEPSEEK_API_KEY in .env file
+- Add DEEPSEEK_API_KEY in .env file
 
 - npm install 
 - npx playwright install chromium
