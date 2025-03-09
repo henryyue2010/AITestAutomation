@@ -9,6 +9,7 @@ Install & Run:
 - npm install 
 - npx playwright install chromium
 - npm start
+- once the application starts, open http://localhost:3000/api/videoConversion/run/test to run the test
 
 
 Note:
